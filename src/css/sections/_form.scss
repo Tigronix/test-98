@@ -1,0 +1,108 @@
+.form {
+  padding-top: 12.9rem;
+  background: url('../img/css/form-bg.jpg') no-repeat center top;
+  background-size: 100% auto;
+  overflow: hidden;
+  $self: &;
+  margin-bottom: 7.4rem;
+
+  @include mobile {
+    background: none;
+    padding-top: 0;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  &__list {
+    margin: -3.6rem;
+
+    @include mobile {
+      margin: -1.2rem;
+    }
+  }
+
+  &__li {
+    padding: 3.6rem;
+
+    @include mobile {
+      padding: -1.2rem;
+    }
+
+    &--js {
+      padding-top: 9.2rem;
+
+      @include mobile {
+        padding-top: 1.2rem;
+      }
+    }
+  }
+
+  &__item {
+    text-align: center;
+  }
+
+  &__icon {
+    font-size: 4.7rem;
+    margin-bottom: 2.8rem;
+
+    @include mobile {
+      margin-bottom: .8rem;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 300;
+    color: $black;
+    margin-bottom: 5.3rem;
+
+    @include mobile {
+      font-size: 2.4rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__input-list {
+    max-width: 52rem;
+    margin: -1.2rem auto;
+  }
+
+  &__input-li {
+    padding: 1.2rem 0;
+  }
+
+  &__check-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -.7rem;
+  }
+
+  &__check-li {
+    width: calc(100% / 3);
+    padding: .7rem;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__desc {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: $black;
+    font-weight: 300;
+    margin-bottom: 4rem;
+
+    &--js {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

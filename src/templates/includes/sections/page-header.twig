@@ -1,0 +1,41 @@
+{% if navList %}
+{% else %}
+  {% set navList = [
+    {
+      text: 'Личная информация',
+      active: true
+    },
+    {
+      text: 'Опыт'
+    },
+    {
+      text: 'Javascript'
+    },
+    {
+      text: 'О себе'
+    },
+  ] %}
+{% endif %}
+
+
+<header class="page-header js-page-header">
+  <div class="container page-header__container">
+    <button type="button" class="page-header__btn js-header-btn">
+      {% include '../svg-temp.twig' with {
+        iconName: 'menu',
+        mod: 'page-header__btn-icon page-header__btn-icon--open',
+      } %}
+      {% include '../svg-temp.twig' with {
+        iconName: 'close',
+        mod: 'page-header__btn-icon page-header__btn-icon--close',
+      } %}
+    </button>
+    <nav class="page-header__nav">
+        <ul class="page-header__list js-header-menu">
+          {% for item in navList %}
+            <li class="page-header__li{% if item.active %} active{% endif %}"><a href="#" class="page-header__link">{{item.text}}</a></li>
+          {% endfor %}
+        </ul>
+    </nav>
+  </div>
+</header>

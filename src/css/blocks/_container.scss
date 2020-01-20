@@ -1,0 +1,9 @@
+.container {
+  max-width: calc(77rem + 4rem);
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @include mobile {
+    padding: 0 1.6rem;
+  }
+}

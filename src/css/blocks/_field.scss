@@ -1,0 +1,55 @@
+.field {
+  width: 100%;
+  position: relative;
+  $self: &;
+
+  &__input {
+    width: 100%;
+    height: 6rem;
+    border: 1px solid $grey;
+    border-radius: 4px;
+    text-align: center;
+    padding: 0 2rem;
+    text-overflow: ellipsis;
+
+    #{$self}.filled &, &:focus {
+      border-color: $blue;
+    }
+  }
+
+  &__label {
+    font-size: 2.4rem;
+    color: $grey1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: top .3s, font-size .3s;
+    white-space: nowrap;
+
+    @include mobile {
+      font-size: 1.4rem;
+    }
+
+    #{$self}.filled &, #{$self}__input:focus + & {
+      font-size: 1.4rem;
+      top: -1rem;
+    }
+  }
+
+  &--textarea {
+    border: 1px solid $grey;
+    padding: 2.3rem 2rem;
+    resize: vertical;
+    min-height: 18.1rem;
+    text-align: left;
+    font-size: 2.4rem;
+    color: $grey1;
+
+    @include mobile {
+      font-size: 1.4rem;
+      min-height: 12rem;
+      padding: 1rem;
+    }
+  }
+}

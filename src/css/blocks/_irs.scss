@@ -1,0 +1,110 @@
+.irs {
+  $self: &;
+  margin-top: 10rem;
+
+  @include mobile {
+    display: none;
+  }
+
+  &-single {
+    #{$self}--flat & {
+      width: 2.3rem;
+      height: 2.6rem;
+      background: #fff url(../svg_icons/range-pointer.svg) no-repeat center;
+      background-size: 100% auto;
+      cursor: pointer;
+      font-size: 0;
+      z-index: 10;
+      top: 1.8rem;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &-line {
+    #{$self}--flat & {
+      height: 14px;
+      top: 0;
+      border-radius: 0;
+      background: url(../img/css/range-slider-bg-grey.png) no-repeat center;
+      background-size: 100% auto;
+    }
+  }
+
+  &-min, &-max {
+    display: none;
+  }
+
+  &-bar {
+    #{$self}--flat & {
+      height: 14px;
+      top: 0;
+      border-radius: 0;
+      background: #fff url(../img/css/range-slider-bg.png) no-repeat left top;
+      background-size: 77rem auto;
+      right: 0;
+    }
+  }
+
+  &-handle {
+    #{$self}--flat & {
+      width: 0.1rem;
+      i {
+        display: none!important;
+      }
+    }
+  }
+
+  &-grid {
+    top: -35px;
+    z-index: 5;
+  }
+
+  &-grid-pol {
+    display: none;
+  }
+
+  &-grid-text {
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    font-weight: 300;
+    color: #2e211c;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+    transform: translateX(-2px);
+    margin-left: 0!important;
+
+    &:after {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: calc(100% + 5px);
+      width: 1px;
+      height: 20px;
+      background: url(../img/css/slider-dots.png) repeat-y;
+      background-size: 100% auto;
+    }
+
+    &.js-grid-text-1 {
+      &:after {
+        height: 10px;
+      }
+    }
+
+    &.js-grid-text-2 {
+      &:after {
+        height: 10px;
+      }
+    }
+
+    &.js-grid-text-3 {
+      &:after {
+        height: 6px;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@mixin hover {
+  @include fromDesktop {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// fonts
+@mixin roboto {
+  font-family: 'Roboto';
+}
+
+// brakepoints
+
+@mixin fromDesktop {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+// other
+@mixin btnReset {
+  padding: 0;
+  background: none;
+  border: none;
+}
+@mixin hide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+@mixin show {
+  position: static;
+  opacity: 1;
+  pointer-events: auto;
+}

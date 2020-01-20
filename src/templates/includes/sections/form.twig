@@ -1,0 +1,130 @@
+{% if checkList %}
+{% else %}
+  {% set checkList = [
+    {
+      text: 'БЭМ/OOCSS',
+      checked: true
+    },
+    {
+      text: 'Верстаю семантично',
+      checked: true
+    },
+    {
+      text: 'Webpack',
+      checked: true
+    },
+    {
+      text: 'Stylus/LESS/SASS',
+      checked: true
+    },
+    {
+      text: 'ES2015/ES2016',
+      checked: true
+    },
+    {
+      text: 'jQuery',
+      checked: true
+    },
+    {
+      text: 'Работаю с SVG',
+      checked: true
+    },
+    {
+      text: 'Gulp/GRUNT',
+      checked: true
+    },
+    {
+      text: 'Использую Git',
+      checked: true
+    },
+  ] %}
+{% endif %}
+
+
+<form class="form">
+  <div class="container form__container">
+    <h1 class="h1 form__h1">Анкета</h1>
+    <ul class="form__list">
+      <li class="form__li">
+        <div class="form__item">
+          {% include '../svg-temp.twig' with {
+            iconName: 'personal-data',
+            mod: 'form__icon'
+          } %}
+          <div class="form__title">Личная информация</div>
+          <ul class="form__input-list">
+            <li class="form__input-li">
+              <label class="field js-field">
+                <input type="text" class="field__input js-field-input" value="Демишкевич Витольд Андреевич" required>
+                <span class="field__label">ФИО</span>
+              </label>
+            </li>
+            <li class="form__input-li">
+              {% include '../select.twig' %}
+            </li>
+            <li class="form__input-li">
+              <label class="field js-field">
+                <input type="text" class="field__input js-field-input" value="Мончегорск" required>
+                <span class="field__label">Место проживания</span>
+              </label>
+            </li>
+            <li class="form__input-li">
+              <label class="field js-field">
+                <input type="text" class="field__input js-field-input" value="tigronix1" required>
+                <span class="field__label">Skype</span>
+              </label>
+            </li>
+            <li class="form__input-li">
+              <label class="field js-field">
+                <input type="email" class="field__input js-field-input" value="vitoldDemi@yandex.ru" required>
+                <span class="field__label">E-mail</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="form__li">
+        <div class="form__item">
+          {% include '../svg-temp.twig' with {
+            iconName: 'experience',
+            mod: 'form__icon'
+          } %}
+          <div class="form__title">Расскажите о своем опыте</div>
+          <ul class="form__check-list">
+            {% for item in checkList %}
+              <li class="form__check-li">
+                {% include '../checkbox.twig' with {
+                  text: item.text,
+                  checked: item.checked
+                } %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </li>
+      <li class="form__li form__li--js">
+        <div class="form__item">
+          {% include '../svg-temp.twig' with {
+            iconName: 'js',
+            mod: 'form__icon'
+          } %}
+          <div class="form__title">Уровень владения Javascript</div>
+          {% include '../range-slider.twig' %}
+        </div>
+      </li>
+      </li>
+      <li class="form__li">
+        <div class="form__item">
+          {% include '../svg-temp.twig' with {
+            iconName: 'about',
+            mod: 'form__icon'
+          } %}
+          <div class="form__title">Расскажите о себе</div>
+          <div class="form__desc">Напишите несколько предложений, чем привлекла наша вакансия и что вы ожидаете от работы у нас.</div>
+          <textarea placeholder="Понравилась тем, что..." class="field field--textarea">Для меня самое главное в любой компании - это люди. Если хорошо и правильно налажена коммуникация, то и работа будет идти гладко и эффективно.</textarea>
+          <button type="submit" class="btn">Готово</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</form>

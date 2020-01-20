@@ -1,0 +1,84 @@
+.select {
+  display: inline-block;
+  position: relative;
+  z-index: 500;
+  $self: &;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  &__btn {
+    border: 1px solid $grey;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 2.4rem;
+    color: $grey1;
+    height: 6rem;
+    padding: 0 2rem;
+    min-width: 32rem;
+
+    @include mobile {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+
+  &__text {
+    max-width: 80%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__icon {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    transition: transform .3s;
+
+    #{$self}.active & {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  &__list {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 15px);
+    right: 0;
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
+    padding: 4rem 0 0rem;
+    max-height: 30rem;
+    overflow: auto;
+    overflow-x: hidden;
+    background: #fff;
+    margin: -1.1rem 0;
+    border-radius: 4px;
+
+    #{$self}.active & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &__li {
+    padding: 1.1rem 0;
+
+    &:last-child {
+      margin-bottom: 3.3rem;
+    }
+  }
+
+  &__item {
+    color: $blue;
+    font-size: 2rem;
+    font-weight: 300;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,50 @@
+{% if selectList %}
+{% else %}
+  {% set selectList = [
+    {
+      text: '1990'
+    },
+    {
+      text: '1991'
+    },
+    {
+      text: '1992'
+    },
+    {
+      text: '1993'
+    },
+    {
+      text: '1994'
+    },
+    {
+      text: '1995'
+    },
+    {
+      text: '1996'
+    },
+    {
+      text: '1997'
+    },
+    {
+      text: '1998'
+    },
+  ] %}
+{% endif %}
+
+
+<div class="select js-select">
+  <button type="button" class="select__btn js-select-btn">
+    <span class="select__text js-select-text">{{text|default('1994')}}</span>
+    {% include 'svg-temp.twig' with {
+      iconName: 'chevron-down',
+      mod: 'select__icon'
+    } %}
+  </button>
+  <ul class="select__list">
+    {% for item in selectList %}
+      <li class="select__li">
+        <div class="select__item js-select-option">{{item.text}}</div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
