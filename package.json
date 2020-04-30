@@ -17,7 +17,7 @@
     "es5-shim": "^4.5.13",
     "es6-shim": "^0.35.5",
     "ion-rangeslider": "^2.3.1",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "jquery-mask-plugin": "^1.14.16",
     "jscrollpane": "^2.2.1",
     "normalize.css": "^7.0.0",
